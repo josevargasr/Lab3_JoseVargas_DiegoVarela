@@ -21,6 +21,7 @@ static boolean cliente = false;
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("Usuario admin = admim / Contraseña admin = claudia99");
         ArrayList<Locales> locales = new ArrayList();
         ArrayList<Clientes> clientes = new ArrayList();
         boolean valid = true;
