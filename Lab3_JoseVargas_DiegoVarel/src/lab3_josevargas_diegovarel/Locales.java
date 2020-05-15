@@ -55,7 +55,7 @@ public class Locales {
 
     @Override
     public String toString() {
-        return "Locales{" + "nombre=" + nombre + '}';
+        return  "Nombre = " + nombre;
     }
  
 }

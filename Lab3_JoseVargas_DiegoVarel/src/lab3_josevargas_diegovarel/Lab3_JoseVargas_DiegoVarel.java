@@ -173,7 +173,7 @@ public class Lab3_JoseVargas_DiegoVarel {
                                 }
                                 System.out.println("Ingrese la posicion del local a la cual deseas agregar un producto:");
                                 int po = entrada.nextInt();
-                                System.out.println("Que produto desea agregar:");
+                                System.out.println("Que producto desea agregar:");
                                 System.out.println("1) Comida");
                                 System.out.println("2) Ropa");
                                 System.out.println("3) Juguetes");
@@ -253,9 +253,9 @@ public class Lab3_JoseVargas_DiegoVarel {
                                         }
                                         if (locales.get(po) instanceof Quiosco) {
                                             int des = precio / 2;
-                                            ((Quiosco) locales.get(po)).getRopa().add(new Ropa(tipo, talla, desc, nomb, des));
+                                            locales.get(po).getProductos().add(new Ropa(tipo, talla, desc, nomb, des));
                                         } else {
-                                            ((Tiendas) locales.get(po)).getRopa().add(new Ropa(tipo, talla, desc, nomb, precio));
+                                            locales.get(po).getProductos().add(new Ropa(tipo, talla, desc, nomb, precio));
                                         }
                                         break;
                                     case 3:
@@ -268,9 +268,9 @@ public class Lab3_JoseVargas_DiegoVarel {
                                         int prize = entrada.nextInt();
                                         if (locales.get(po) instanceof Quiosco) {
                                             int des = prize / 2;
-                                            ((Quiosco) locales.get(po)).getJuguetes().add(new Juguetes(descu, nombr, des));
+                                            locales.get(po).getProductos().add(new Juguetes(descu, nombr, des));
                                         } else {
-                                            ((Tiendas) locales.get(po)).getJuguetes().add(new Juguetes(descu, nombr, prize));
+                                            locales.get(po).getProductos().add(new Juguetes(descu, nombr, prize));
                                         }
                                         break;
                                 }
@@ -287,15 +287,42 @@ public class Lab3_JoseVargas_DiegoVarel {
                     break;
                 case 4:
                     if (cliente) {
-
-                    } else {
+                        System.out.println("Locales: ");
+                        for (int i = 0; i < locales.size(); i++) {
+                            System.out.println("[" + i + "] " + locales.get(i));
+                        }
+                        System.out.println("Ingrese el local que desea visitar: ");
+                        int posi = entrada.nextInt();
+                        System.out.println("Bienvenido al local " + locales.get(posi).getNombre());
+                        System.out.println("1] Ver Productos\n"
+                                + "2] Salir\n"
+                                + "Ingrese una opcion: ");
+                        int opt = entrada.nextInt();
+                        if (opt == 1) {
+                            for (int i = 0; i < locales.get(posi).getProductos().size(); i++) {
+                                System.out.println("[" + i + "] " + locales.get(posi).getProductos().get(i));
+                            }
+                            System.out.println("Ingrese la posicion del articulo que desea comprar: ");
+                            int compra = entrada.nextInt();
+                            if ((clientes.get(0).getDinero() - locales.get(posi).getProductos().get(compra).getPrecio()) < 0) {
+                                System.out.println("Sus fondos son insuficientes para completar esta compra");
+                            } else {
+                                clientes.get(0).getComprados().add(locales.get(posi).getProductos().get(compra));
+                                clientes.get(0).setDinero(clientes.get(0).getDinero() - locales.get(posi).getProductos().get(compra).getPrecio());
+                                System.out.println("El articulo fue comprado con exito!");
+                            }
+                        } else {
+                            
+                        }
+                        System.out.println("Gracias por visitarnos, vuelva pronto!");
+                    }else {
                         System.out.println("No se ha ingresado sesion todavia");
                     }
-                    System.out.println();
-                    break;
+            System.out.println();
+            break;
 
-            }
         }
     }
+}
 
 }

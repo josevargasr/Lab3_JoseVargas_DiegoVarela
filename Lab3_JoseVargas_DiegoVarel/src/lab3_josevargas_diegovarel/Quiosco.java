@@ -13,28 +13,12 @@ import java.util.ArrayList;
  */
 public class Quiosco extends Locales {
 
-    private ArrayList<Ropa> ropa = new ArrayList();
-    private ArrayList<Juguetes> juguetes = new ArrayList();
-
     public Quiosco(String nombre) {
         super(nombre);
     }
 
-    public ArrayList<Ropa> getRopa() {
-        return ropa;
-    }
-
-    public void setRopa(ArrayList<Ropa> ropa) {
-        this.ropa = ropa;
-    }
-
-    public ArrayList<Juguetes> getJuguetes() {
-        return juguetes;
-    }
-
-    public void setJuguetes(ArrayList<Juguetes> juguetes) {
-        this.juguetes = juguetes;
-    }
+    
+    
 
 
 }
