@@ -17,9 +17,8 @@ public class Locales {
  private ArrayList<Productos>productos=new ArrayList();
  private Empleados gerente;
 
-    public Locales(String nombre, Empleados gerente) {
+    public Locales(String nombre) {
         this.nombre = nombre;
-        this.gerente = gerente;
     }
 
     public String getNombre() {

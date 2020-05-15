@@ -16,8 +16,8 @@ public class Bares extends Locales {
     private ArrayList<Empleados> empleados = new ArrayList();
     private ArrayList<Comida> comid = new ArrayList();
 
-    public Bares(String nombre, Empleados gerente) {
-        super(nombre, gerente);
+    public Bares(String nombre) {
+        super(nombre);
     }
 
     public ArrayList<Empleados> getEmpleados() {

@@ -16,8 +16,8 @@ public class Tiendas extends Locales {
     private ArrayList<Ropa> ropa = new ArrayList();
     private ArrayList<Juguetes> juguetes = new ArrayList();
 
-    public Tiendas(String nombre, Empleados gerente) {
-        super(nombre, gerente);
+    public Tiendas(String nombre) {
+        super(nombre);
     }
 
     public ArrayList<Ropa> getRopa() {

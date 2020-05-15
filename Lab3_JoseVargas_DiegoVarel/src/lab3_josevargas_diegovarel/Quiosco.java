@@ -16,8 +16,8 @@ public class Quiosco extends Locales {
     private ArrayList<Ropa> ropa = new ArrayList();
     private ArrayList<Juguetes> juguetes = new ArrayList();
 
-    public Quiosco(String nombre, Empleados gerente) {
-        super(nombre, gerente);
+    public Quiosco(String nombre) {
+        super(nombre);
     }
 
     public ArrayList<Ropa> getRopa() {
