@@ -11,19 +11,29 @@ import java.util.ArrayList;
  *
  * @author diego
  */
-public class Quiosco extends Locales{
-private ArrayList<Productos>produc=new ArrayList();
+public class Quiosco extends Locales {
+
+    private ArrayList<Ropa> ropa = new ArrayList();
+    private ArrayList<Juguetes> juguetes = new ArrayList();
 
     public Quiosco(String nombre, Empleados gerente) {
         super(nombre, gerente);
     }
 
-    public ArrayList<Productos> getProduc() {
-        return produc;
+    public ArrayList<Ropa> getRopa() {
+        return ropa;
     }
 
-    public void setProduc(ArrayList<Productos> produc) {
-        this.produc = produc;
+    public void setRopa(ArrayList<Ropa> ropa) {
+        this.ropa = ropa;
+    }
+
+    public ArrayList<Juguetes> getJuguetes() {
+        return juguetes;
+    }
+
+    public void setJuguetes(ArrayList<Juguetes> juguetes) {
+        this.juguetes = juguetes;
     }
 
 

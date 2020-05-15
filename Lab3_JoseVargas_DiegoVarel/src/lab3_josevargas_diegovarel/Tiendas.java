@@ -11,8 +11,10 @@ import java.util.ArrayList;
  *
  * @author diego
  */
-public class Tiendas extends Locales{
-    private ArrayList<Ropa>ropa=new ArrayList();
+public class Tiendas extends Locales {
+
+    private ArrayList<Ropa> ropa = new ArrayList();
+    private ArrayList<Juguetes> juguetes = new ArrayList();
 
     public Tiendas(String nombre, Empleados gerente) {
         super(nombre, gerente);
@@ -26,6 +28,13 @@ public class Tiendas extends Locales{
         this.ropa = ropa;
     }
 
-   
+    public ArrayList<Juguetes> getJuguetes() {
+        return juguetes;
+    }
+
+    public void setJuguetes(ArrayList<Juguetes> juguetes) {
+        this.juguetes = juguetes;
+    }
     
+
 }

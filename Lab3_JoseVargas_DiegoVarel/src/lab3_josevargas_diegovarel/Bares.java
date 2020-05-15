@@ -12,8 +12,9 @@ import java.util.ArrayList;
  * @author diego
  */
 public class Bares extends Locales {
-    private ArrayList<Empleados>empleados=new ArrayList();
-    private ArrayList<Productos> productos=new ArrayList();
+
+    private ArrayList<Empleados> empleados = new ArrayList();
+    private ArrayList<Comida> comid = new ArrayList();
 
     public Bares(String nombre, Empleados gerente) {
         super(nombre, gerente);
@@ -27,12 +28,12 @@ public class Bares extends Locales {
         this.empleados = empleados;
     }
 
-    public ArrayList<Productos> getProductos() {
-        return productos;
+    public ArrayList<Comida> getComid() {
+        return comid;
     }
 
-    public void setProductos(ArrayList<Productos> productos) {
-        this.productos = productos;
+    public void setComid(ArrayList<Comida> comid) {
+        this.comid = comid;
     }
-    
+
 }
