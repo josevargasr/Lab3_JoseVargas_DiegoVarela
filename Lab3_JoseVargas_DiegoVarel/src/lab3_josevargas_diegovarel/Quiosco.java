@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class Quiosco extends Locales{
 private ArrayList<Productos>produc=new ArrayList();
 
-    public Quiosco(String nombre, Empleados gerente) {
-        super(nombre, gerente);
+    public Quiosco(String nombre) {
+        super(nombre);
     }
 
     public ArrayList<Productos> getProduc() {
