@@ -16,7 +16,7 @@ public class Clientes extends Personas {
     private int dinero;
     private ArrayList<Productos>comprados=new ArrayList();
 
-    public Clientes(int dinero, int Id, String username, String contraseña, String correo, String nombre, Date nacimiento) {
+    public Clientes(int dinero, int Id, String username, String contraseña, String correo, String nombre, String nacimiento) {
         super(Id, username, contraseña, correo, nombre, nacimiento);
         this.dinero = dinero;
     }

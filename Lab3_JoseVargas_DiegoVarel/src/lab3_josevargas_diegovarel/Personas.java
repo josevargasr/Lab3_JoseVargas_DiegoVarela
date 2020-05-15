@@ -17,15 +17,15 @@ public class Personas {
     private String contraseña;
     private String correo;
     private String nombre;
-    private Date nacimiento;
+    private String nacimiento;
 
-    public Personas(int Id, String username, String contraseña, String correo, String nombre, Date nacimiento) {
+    public Personas(int Id, String username, String contraseña, String correo, String nombre, String nacimiento) {
         this.Id = Id;
         this.username = username;
         this.contraseña = contraseña;
         this.correo = correo;
         this.nombre = nombre;
-        this.nacimiento = nacimiento;
+      this.nacimiento=nacimiento;
     }
 
     public String getNombre() {
@@ -36,13 +36,15 @@ public class Personas {
         this.nombre = nombre;
     }
 
-    public Date getNacimiento() {
+    public String getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(String nacimiento) {
         this.nacimiento = nacimiento;
     }
+
+   
    
 
     public int getId() {

@@ -13,13 +13,14 @@ import java.util.Date;
  */
 public class Comida extends Productos {
     private String tipo;
-    private Date caducidad;
+    private String caducidad;
 
-    public Comida(String tipo, Date caducidad, String descripcion, String nombre, int precio) {
+    public Comida(String tipo, String caducidad, String descripcion, String nombre, int precio) {
         super(descripcion, nombre, precio);
         this.tipo = tipo;
         this.caducidad = caducidad;
     }
+
 
     public String getTipo() {
         return tipo;
@@ -29,12 +30,14 @@ public class Comida extends Productos {
         this.tipo = tipo;
     }
 
-    public Date getCaducidad() {
+    public String getCaducidad() {
         return caducidad;
     }
 
-    public void setCaducidad(Date caducidad) {
+    public void setCaducidad(String caducidad) {
         this.caducidad = caducidad;
     }
+
+   
     
 }
