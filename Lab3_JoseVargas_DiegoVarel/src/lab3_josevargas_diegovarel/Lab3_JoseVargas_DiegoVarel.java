@@ -139,6 +139,9 @@ public class Lab3_JoseVargas_DiegoVarel {
                                 nombre = entrada.nextLine();
                                 System.out.println("Ingrese su fecha de nacimiento(dd/MM/yyyy): ");
                                 String fecha2 = entrada.next();
+                                System.out.println("Ingrese su horario:");
+                                String horario = entrada.nextLine();
+                                horario = entrada.nextLine();
                                 boolean existe = false;
                                 for (Empleados empleado : empleados) {
                                     if (empleado.getUsername().equals(username2) && empleado.getId() == id2) {
@@ -163,7 +166,7 @@ public class Lab3_JoseVargas_DiegoVarel {
                                     id2 = entrada.nextInt();
                                     System.out.println("Ingrese su username: ");
                                     username2 = entrada.next();
-                                    locales.get(pos).getEmpleados().add(new Empleados(correo2, id2, username2, contraseña2, correo2, nombre2, fecha2));
+                                    locales.get(pos).getEmpleados().add(new Empleados(horario, id2, username2, contraseña2, correo2, nombre2, fecha2));
                                     System.out.println("Empleado agregado con exito");
                                 }
                                 break;
@@ -216,9 +219,9 @@ public class Lab3_JoseVargas_DiegoVarel {
                                         desc = entrada.nextLine();
                                         System.out.println("Ingrese el precio:");
                                         int precio = entrada.nextInt();
-                                        System.out.println("Ingrese el tipo de ropa:"
-                                                + "1) Hombre"
-                                                + "2) Mujer");
+                                        System.out.println("Ingrese el tipo de ropa:\n"
+                                                + "1) Hombre\n"
+                                                + "2) Mujer\n");
                                         int com = entrada.nextInt();
                                         String tipo = "";
                                         switch (com) {
@@ -229,11 +232,11 @@ public class Lab3_JoseVargas_DiegoVarel {
                                                 tipo = "Mujer";
                                                 break;
                                         }
-                                        System.out.println("Ingrese la talla:"
-                                                + "1) XS"
-                                                + "2) S"
-                                                + "3) M"
-                                                + "4) L");
+                                        System.out.println("Ingrese la talla:\n"
+                                                + "1) XS\n"
+                                                + "2) S\n"
+                                                + "3) M\n"
+                                                + "4) L\n");
                                         int tal = entrada.nextInt();
                                         String talla = "";
                                         switch (tal) {
@@ -276,8 +279,281 @@ public class Lab3_JoseVargas_DiegoVarel {
                                 }
                                 break;
                             case 4:
+                                System.out.println("Que desea modificar");
+                                System.out.println("1) Tiendas");
+                                System.out.println("2) Clientes");
+                                System.out.println("3) Empleados");
+                                int mod = entrada.nextInt();
+                                switch (mod) {
+                                    case 1:
+                                        for (Locales loc : locales) {
+                                            System.out.println(loc);
+                                        }
+                                        System.out.println("Ingrese la tienda que desea modificar:");
+                                        int tien = entrada.nextInt();
+                                        System.out.println("Que desea modificar?\n");
+                                        System.out.println("1) Nombre\n"
+                                                + "2) Lista de productos ");
+                                        int opcio = entrada.nextInt();
+                                        switch (opcio) {
+                                            case 1:
+                                                System.out.println("Ingrese el nombre :");
+                                                String no = entrada.next();
+                                                locales.get(tien).setNombre(no);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 2:
+                                                locales.get(tien).getProductos().toString();
+                                                System.out.println("Ingrese que producto desea cambiar ?");
+                                                int pro = entrada.nextInt();
+                                                System.out.println("Que desea modificar?");
+                                                System.out.println("1) Nombre");
+                                                System.out.println("2) Descripcion");
+                                                System.out.println("3) Precio");
+                                                int change = entrada.nextInt();
+                                                switch (change) {
+                                                    case 1:
+                                                        System.out.println("Ingrese el nombre :");
+                                                        String name = entrada.next();
+                                                        locales.get(tien).getProductos().get(pro).setNombre(name);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                    case 2:
+                                                        System.out.println("Ingrese la descricpion:");
+                                                        String descript = entrada.nextLine();
+                                                        descript = entrada.nextLine();
+                                                        locales.get(tien).getProductos().get(pro).setDescripcion(descript);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                    case 3:
+                                                        System.out.println("Ingrese el nuevo precio:");
+                                                        int pre = entrada.nextInt();
+                                                        locales.get(tien).getProductos().get(pro).setPrecio(pre);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                }
+                                                break;
+                                        }
+                                        break;
+                                    case 2:
+                                        for (Clientes cli : clientes) {
+                                            System.out.println(cli);
+                                        }
+                                        System.out.println("Cual cliente desea modificar");
+                                        int modi = entrada.nextInt();
+                                        System.out.println("Que desea modificar?");
+                                        System.out.println("1) Id");
+                                        System.out.println("2) Username");
+                                        System.out.println("3) Contraseña");
+                                        System.out.println("4) Correo");
+                                        System.out.println("5) Nombre");
+                                        System.out.println("6) Fecha de nacimiento");
+                                        System.out.println("7) Dinero");
+                                        System.out.println("8) Productos comprados");
+                                        int opt = entrada.nextInt();
+                                        switch (opt) {
+                                            case 1:
+                                                System.out.println("Ingrese el nuevo Id:");
+                                                int ide = entrada.nextInt();
+                                                clientes.get(modi).setId(ide);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 2:
+                                                System.out.println("Ingrese el nuevo username:");
+                                                String uswr = entrada.next();
+                                                clientes.get(modi).setUsername(uswr);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 3:
+                                                System.out.println("Ingrese su nueva contraseña:");
+                                                String cont = entrada.next();
+                                                clientes.get(modi).setContraseña(cont);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 4:
+                                                System.out.println("Ingrese su nuevo correo:");
+                                                String mail = entrada.next();
+                                                clientes.get(modi).setCorreo(mail);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 5:
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                String name = entrada.next();
+                                                clientes.get(modi).setNombre(name);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 6:
+                                                System.out.println("ingrese su nueva fecha de nacimiento(dd/MM/yyyy):");
+                                                String date = entrada.next();
+                                                clientes.get(modi).setNacimiento(date);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 7:
+                                                System.out.println("Ingrese la nueva cantidad de dinero:");
+                                                int diner = entrada.nextInt();
+                                                clientes.get(modi).setDinero(diner);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 8:
+                                                clientes.get(modi).getComprados().toString();
+                                                System.out.println("Ingrese que producto desea modificar?");
+                                                int pro = entrada.nextInt();
+                                                System.out.println("Que desea modificar?");
+                                                System.out.println("1) Nombre");
+                                                System.out.println("2) Descripcion");
+                                                System.out.println("3) Precio");
+                                                int change = entrada.nextInt();
+                                                switch (change) {
+                                                    case 1:
+                                                        System.out.println("Ingrese el nombre :");
+                                                        String name2 = entrada.next();
+                                                        clientes.get(modi).getComprados().get(pro).setNombre(name2);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                    case 2:
+                                                        System.out.println("Ingrese la descricpion:");
+                                                        String descript = entrada.nextLine();
+                                                        descript = entrada.nextLine();
+                                                        clientes.get(modi).getComprados().get(pro).setDescripcion(descript);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                    case 3:
+                                                        System.out.println("Ingrese el nuevo precio:");
+                                                        int pre = entrada.nextInt();
+                                                        clientes.get(modi).getComprados().get(pro).setPrecio(pre);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                }
+                                                break;
+
+                                        }
+                                        break;
+                                    case 3:
+                                        for (Empleados emp : empleados) {
+                                            System.out.println(emp);
+                                        }
+                                        System.out.println("Cual empleado desea modificar");
+                                        int modif = entrada.nextInt();
+                                        System.out.println("Que desea modificar?");
+                                        System.out.println("1) Id");
+                                        System.out.println("2) Username");
+                                        System.out.println("3) Contraseña");
+                                        System.out.println("4) Correo");
+                                        System.out.println("5) Nombre");
+                                        System.out.println("6) Fecha de nacimiento");
+                                        System.out.println("7) Horario");
+                                        System.out.println("8) Productos vendidos");
+                                        int opti = entrada.nextInt();
+                                        switch (opti) {
+                                            case 1:
+                                                System.out.println("Ingrese el nuevo Id:");
+                                                int ide = entrada.nextInt();
+                                                empleados.get(modif).setId(ide);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 2:
+                                                System.out.println("Ingrese el nuevo username:");
+                                                String uswr = entrada.next();
+                                                empleados.get(modif).setUsername(uswr);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 3:
+                                                System.out.println("Ingrese su nueva contraseña:");
+                                                String cont = entrada.next();
+                                                empleados.get(modif).setContraseña(cont);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 4:
+                                                System.out.println("Ingrese su nuevo correo:");
+                                                String mail = entrada.next();
+                                                empleados.get(modif).setCorreo(mail);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 5:
+                                                System.out.println("Ingrese su nuevo nombre:");
+                                                String name = entrada.next();
+                                                empleados.get(modif).setNombre(name);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 6:
+                                                System.out.println("ingrese su nueva fecha de nacimiento(dd/MM/yyyy):");
+                                                String date = entrada.next();
+                                                empleados.get(modif).setNacimiento(date);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 7:
+                                                System.out.println("Ingrese la nueva cantidad de dinero:");
+                                                String horario2 = entrada.nextLine();
+                                                horario2 = entrada.nextLine();
+                                                ((Empleados) empleados.get(modif)).setHorario(horario2);
+                                                System.out.println("Modificacion echa con exito!!");
+                                                break;
+                                            case 8:
+                                                empleados.get(modif).getVendidos().toString();
+                                                System.out.println("Ingrese que producto desea modificar?");
+                                                int pro = entrada.nextInt();
+                                                System.out.println("Que desea modificar?");
+                                                System.out.println("1) Nombre");
+                                                System.out.println("2) Descripcion");
+                                                System.out.println("3) Precio");
+                                                int change = entrada.nextInt();
+                                                switch (change) {
+                                                    case 1:
+                                                        System.out.println("Ingrese el nombre :");
+                                                        String name2 = entrada.next();
+                                                        empleados.get(modif).getVendidos().get(pro).setNombre(name2);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                    case 2:
+                                                        System.out.println("Ingrese la descricpion:");
+                                                        String descript = entrada.nextLine();
+                                                        descript = entrada.nextLine();
+                                                        empleados.get(modif).getVendidos().get(pro).setDescripcion(descript);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                    case 3:
+                                                        System.out.println("Ingrese el nuevo precio:");
+                                                        int pre = entrada.nextInt();
+                                                        empleados.get(modif).getVendidos().get(pro).setPrecio(pre);
+                                                        System.out.println("Modificacion echa con exito!!");
+                                                        break;
+                                                }
+                                                break;
+                                        }
+                                }
                                 break;
                             case 5:
+                                System.out.println("Que desea eliminar?");
+                                System.out.println("1) Tiendas");
+                                System.out.println("2) Clientes");
+                                System.out.println("3) Empleados");
+                                int el = entrada.nextInt();
+                                switch (el) {
+                                    case 1:
+                                        for (Locales loc : locales) {
+                                            System.out.println(loc);
+                                        }
+                                        System.out.println("Cual tienda desea eliminar?");
+                                        int elim = entrada.nextInt();
+                                        locales.remove(elim);
+                                        break;
+                                    case 2:
+                                        for (Clientes cli : clientes) {
+                                            System.out.println(cli);
+                                        }
+                                        System.out.println("Cual cliente desea eliminar?");
+                                        int elimi = entrada.nextInt();
+                                        clientes.remove(elimi);
+                                        break;
+                                    case 3:
+                                        for (Empleados emp : empleados) {
+                                            System.out.println(emp);
+                                        }
+                                        System.out.println("Cual empleado desea eliminar?");
+                                        int elimin = entrada.nextInt();
+                                        clientes.remove(elimin);
+                                        break;
+                                }
                                 break;
                         }
                     } else {
@@ -285,6 +561,7 @@ public class Lab3_JoseVargas_DiegoVarel {
                     }
                     System.out.println();
                     break;
+
                 case 4:
                     if (cliente) {
                         System.out.println("Locales: ");
@@ -312,17 +589,17 @@ public class Lab3_JoseVargas_DiegoVarel {
                                 System.out.println("El articulo fue comprado con exito!");
                             }
                         } else {
-                            
+
                         }
                         System.out.println("Gracias por visitarnos, vuelva pronto!");
-                    }else {
+                    } else {
                         System.out.println("No se ha ingresado sesion todavia");
                     }
-            System.out.println();
-            break;
+                    System.out.println();
+                    break;
 
+            }
         }
     }
-}
 
 }
