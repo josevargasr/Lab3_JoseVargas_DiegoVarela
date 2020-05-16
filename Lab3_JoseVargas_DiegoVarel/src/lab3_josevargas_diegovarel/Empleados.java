@@ -16,7 +16,7 @@ public class Empleados extends Personas {
     private String horario;
     private ArrayList<Productos> vendidos=new ArrayList();
 
-    public Empleados(String horario, int Id, String username, String contraseña, String correo, String nombre, String nacimiento) {
+    public Empleados(String horario, int Id, String username, String contraseña, String correo, String nombre, Date nacimiento) {
         super(Id, username, contraseña, correo, nombre, nacimiento);
         this.horario = horario;
     }

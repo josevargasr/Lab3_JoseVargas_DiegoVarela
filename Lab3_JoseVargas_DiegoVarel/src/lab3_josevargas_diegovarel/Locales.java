@@ -16,6 +16,7 @@ public class Locales {
  private ArrayList<Empleados>empleados=new ArrayList();
  private ArrayList<Productos>productos=new ArrayList();
  private Empleados gerente;
+ private int contador;
 
     public Locales(String nombre) {
         this.nombre = nombre;
@@ -53,9 +54,17 @@ public class Locales {
         this.gerente = gerente;
     }
 
-    @Override
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
+    }
+    
+     @Override
     public String toString() {
-        return  "Nombre = " + nombre;
+        return  "Local: " + nombre + " | Numero de Empleados: " + empleados.size() + " | Numero de Productos: " + productos.size();
     }
  
 }

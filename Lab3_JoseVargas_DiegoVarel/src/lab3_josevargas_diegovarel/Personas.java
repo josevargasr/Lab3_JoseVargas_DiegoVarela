@@ -17,9 +17,9 @@ public class Personas {
     private String contraseña;
     private String correo;
     private String nombre;
-    private String nacimiento;
+    private Date nacimiento;
 
-    public Personas(int Id, String username, String contraseña, String correo, String nombre, String nacimiento) {
+    public Personas(int Id, String username, String contraseña, String correo, String nombre, Date nacimiento) {
         this.Id = Id;
         this.username = username;
         this.contraseña = contraseña;
@@ -36,17 +36,14 @@ public class Personas {
         this.nombre = nombre;
     }
 
-    public String getNacimiento() {
+    public Date getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(String nacimiento) {
+    public void setNacimiento(Date nacimiento) {
         this.nacimiento = nacimiento;
     }
-
-   
-   
-
+    
     public int getId() {
         return Id;
     }
